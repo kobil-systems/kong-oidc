@@ -49,6 +49,7 @@ function M.get_options(config, ngx)
     introspection_endpoint_auth_method = config.introspection_endpoint_auth_method,
     bearer_only = config.bearer_only,
     realm = config.realm,
+    redirect_uri = config.redirect_uri,
     redirect_uri_path = config.redirect_uri_path or M.get_redirect_uri_path(ngx),
     scope = config.scope,
     response_type = config.response_type,
@@ -57,7 +58,8 @@ function M.get_options(config, ngx)
     recovery_page_path = config.recovery_page_path,
     filters = parseFilters(config.filters),
     logout_path = config.logout_path,
-    redirect_after_logout_uri = config.redirect_after_logout_uri,
+    -- redirect_after_logout_uri = config.redirect_after_logout_uri,
+    post_logout_redirect_uri = config.post_logout_redirect_uri
   }
 end
 
